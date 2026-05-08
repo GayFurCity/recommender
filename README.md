@@ -1,6 +1,6 @@
 # Recommender
 
-Post recommendation service for [FemboyFans](https://github.com/FemboyFans/FemboyFans).
+Post recommendation service for [GayFurCity](https://github.com/GayFurCity/GayFurCity).
 
 # Quickstart
 

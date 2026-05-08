@@ -21,7 +21,7 @@ class Recommender:
         self.MAX_FAVS = args.get("max_favs", 1e12)
         self.FAVS_PATH = args.get("favs_path", "data/favs.csv")
         self.MODEL_PATH = args.get("model_path", "data/recommender.pickle")
-        self.DATABASE_URL = args.get("database_url", "postgresql://femboyfans:@postgres/femboyfans_development")
+        self.DATABASE_URL = args.get("database_url", "postgresql://gayfurcity:@postgres/gayfurcity_development")
 
     @staticmethod
     def create(**args):

@@ -13,7 +13,7 @@ permissions:
 jobs:
   docker-build:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'femboyfans'
+    if: github.repository_owner == 'gayfurcity'
 
     steps:
       - name: Publish to ghcr
