@@ -1,20 +1,17 @@
 name: Docker Build
 
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  packages: write
+    contents: read
+    packages: write
 
 jobs:
-  docker-build:
-    runs-on: ubuntu-latest
-    if: github.repository_owner == 'gayfurcity'
-
-    steps:
-      - name: Publish to ghcr
-        uses: e621ng/publish-to-ghcr@v1
+    docker-build:
+        runs-on: ubuntu-latest
+        if: github.repository_owner == 'gayfurcity'
+        steps: [uses: gayfurcity/publish-to-ghcr@v1]
