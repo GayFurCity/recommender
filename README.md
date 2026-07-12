@@ -39,6 +39,12 @@ Post recommendation service for [GayFurCity](https://github.com/GayFurCity/GayFu
     # Get recommendations for post #1
     curl http://localhost:5000/similar/1
 
+    # Get model info (user/post counts, training time, etc.) as JSON
+    curl http://localhost:5000/info
+
+    # Get Prometheus metrics
+    curl http://localhost:5000/metrics
+
 # System requirements
 
 Training on the full dataset of ~80 million favorites takes ~17 minutes (on an

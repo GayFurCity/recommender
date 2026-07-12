@@ -10,11 +10,14 @@ ENV \
   # https://stackoverflow.com/questions/45594707/what-is-pips-no-cache-dir-good-for
   PIP_NO_CACHE_DIR=1 \
   # https://stackoverflow.com/questions/46288847/how-to-suppress-pip-upgrade-warning
-  PIP_DISABLE_PIP_VERSION_CHECK=1
+  PIP_DISABLE_PIP_VERSION_CHECK=1 \
+  # Required for correct Prometheus metrics under gunicorn's multiple worker processes.
+  PROMETHEUS_MULTIPROC_DIR=/tmp/prometheus-multiproc
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends tini postgresql-client && \
-  pip install "poetry==1.1.11"
+  pip install "poetry==1.1.11" && \
+  mkdir -p "$PROMETHEUS_MULTIPROC_DIR"
 
 COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-dev
